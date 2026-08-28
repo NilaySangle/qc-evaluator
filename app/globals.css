@@ -224,66 +224,6 @@ p {
   animation: indeterminate 1.4s var(--ease-out-quint) infinite;
 }
 
-/* ---- intro / welcome overlay ---------------------------------------------
-   A one-time gate, not a page-load sequence a reviewer sits through daily.
-   It is localStorage-gated to fire once, and every reveal below has a
-   reduced-motion fallback that lands it instantly. */
-
-@keyframes intro-backdrop {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-.intro-backdrop {
-  animation: intro-backdrop 0.4s var(--ease-out-quint) both;
-}
-
-@keyframes intro-out {
-  from {
-    opacity: 1;
-    transform: scale(1);
-  }
-  to {
-    opacity: 0;
-    transform: scale(0.99);
-  }
-}
-.intro-out {
-  animation: intro-out 0.42s var(--ease-out-quint) both;
-}
-
-@keyframes intro-rise {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-  to {
-    opacity: 1;
-    transform: none;
-  }
-}
-.intro-rise {
-  animation: intro-rise 0.62s var(--ease-out-quint) both;
-}
-
-/* The score-bar mark: bars grow from the baseline, staggered, the way the
-   real report's dimension bars do. It previews the product's own language. */
-@keyframes intro-bar {
-  from {
-    transform: scaleY(0);
-  }
-  to {
-    transform: scaleY(var(--h, 1));
-  }
-}
-.intro-bar {
-  transform-origin: bottom center;
-  animation: intro-bar 0.7s var(--ease-out-quint) both;
-}
-
 /* ---- nav ------------------------------------------------------------------ */
 
 /* The logo's equalizer bars idle gently, then lift on hover. */
@@ -324,15 +264,8 @@ p {
   .panel-in,
   .fade-in,
   .cite-flash,
-  .intro-backdrop,
-  .intro-out,
-  .intro-rise,
   .underline-in {
     animation: none;
-  }
-  .intro-bar {
-    animation: none;
-    transform: scaleY(var(--h, 1));
   }
   .eq-bar {
     animation: none;
