@@ -1,26 +1,252 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/*
+  Clinical instrument.
+
+  A reviewer works through a queue of calls in one sitting, so this surface is
+  built for reading numbers and checking evidence, not for atmosphere. Three
+  rules drive everything below:
+
+  1. Contrast is not negotiable. Body ink sits at L42 on an L99 ground, well
+     past 4.5:1. Nothing readable lives above L58.
+  2. The five bands ARE the colour system. They encode data, so the accent used
+     for interaction is a separate hue that can never be mistaken for a score.
+  3. Fixed rem type scale at a ~1.2 ratio. Fluid clamp headings belong on
+     marketing pages; here a reviewer views at one consistent size and the
+     scale should not move under them.
+*/
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-sans-stack);
+  --font-mono: var(--font-mono-stack);
+
+  --color-surface: var(--surface);
+  --color-sunk: var(--sunk);
+  --color-raised: var(--raised);
+
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-ink-3: var(--ink-3);
+  --color-line: var(--line);
+  --color-line-2: var(--line-2);
+
+  --color-accent: var(--accent);
+  --color-accent-ink: var(--accent-ink);
+  --color-accent-wash: var(--accent-wash);
+
+  --color-elite: var(--elite);
+  --color-strong: var(--strong);
+  --color-inconsistent: var(--inconsistent);
+  --color-atrisk: var(--atrisk);
+  --color-fail: var(--fail);
+
+  --radius-xs: 3px;
+  --radius-sm: 5px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+
+  --text-micro: 0.6875rem; /* 11px - mono labels, line refs */
+  --text-meta: 0.75rem; /* 12px - metadata, captions */
+  --text-dense: 0.8125rem; /* 13px - table rows, compact UI */
+  --text-body: 0.875rem; /* 14px - default body */
+  --text-read: 0.9375rem; /* 15px - prose passages */
+  --text-lead: 1.125rem; /* 18px - the one thing */
+  --text-h3: 1.25rem; /* 20px */
+  --text-h2: 1.5rem; /* 24px */
+  --text-h1: 2rem; /* 32px */
+  --text-score: 3.5rem; /* 56px - the total, and nothing else */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+  /* Ground: true cool near-white. Deliberately not warm paper. */
+  --surface: oklch(99% 0.0015 250);
+  --sunk: oklch(97.2% 0.003 250);
+  --raised: oklch(100% 0 0);
+
+  --ink: oklch(21% 0.014 262);
+  --ink-2: oklch(42% 0.012 262); /* body — 8.9:1 on surface */
+  --ink-3: oklch(52% 0.011 262); /* meta — 5.6:1, never used for prose */
+  --line: oklch(89% 0.005 262);
+  --line-2: oklch(94% 0.004 262);
+
+  /* Interaction only. Never encodes a score. */
+  --accent: oklch(52% 0.16 262);
+  --accent-ink: oklch(38% 0.15 262);
+  --accent-wash: oklch(96.5% 0.02 262);
+
+  /* The band scale. These encode data and nothing else uses them. */
+  --elite: oklch(48% 0.13 162);
+  --strong: oklch(48% 0.14 232);
+  --inconsistent: oklch(52% 0.13 75);
+  --atrisk: oklch(52% 0.16 45);
+  --fail: oklch(50% 0.19 25);
+
+  --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
+
+  --font-sans-stack: var(--font-inter), ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono-stack: var(--font-jetbrains), ui-monospace, "SF Mono", Menlo, monospace;
+
+  /* Semantic z-scale. No arbitrary 9999s. */
+  --z-sticky: 20;
+  --z-panel-backdrop: 40;
+  --z-panel: 50;
+}
+
+html {
+  background: var(--surface);
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--surface);
+  color: var(--ink);
+  font-family: var(--font-sans-stack);
+  font-size: var(--text-body);
+  font-synthesis-weight: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+  letter-spacing: -0.018em;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+.focus-ring {
+  outline: none;
+}
+.focus-ring:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: var(--radius-xs);
+}
+
+::selection {
+  background: var(--accent-wash);
+  color: var(--accent-ink);
+}
+
+/* Scores line up in a column. Non-negotiable in a scoring table. */
+.tnum {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+}
+
+/* ---- motion ------------------------------------------------------------ */
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.rise {
+  animation: rise 0.24s var(--ease-out-quint) both;
+}
+
+@keyframes bar-grow {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+.bar-grow {
+  transform-origin: left center;
+  animation: bar-grow 0.5s var(--ease-out-quint) both;
+}
+
+@keyframes panel-in {
+  from {
+    opacity: 0;
+    transform: translateX(16px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.panel-in {
+  animation: panel-in 0.22s var(--ease-out-quint) both;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.fade-in {
+  animation: fade-in 0.18s linear both;
+}
+
+/* A cited line, once the panel has scrolled to it. */
+@keyframes cite-flash {
+  0% {
+    background: var(--accent-wash);
+  }
+  100% {
+    background: transparent;
+  }
+}
+.cite-flash {
+  animation: cite-flash 1.6s var(--ease-out-quint) both;
+}
+
+@keyframes indeterminate {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(400%);
+  }
+}
+.indeterminate::after {
+  content: "";
+  position: absolute;
+  inset-block: 0;
+  width: 25%;
+  background: var(--accent);
+  border-radius: inherit;
+  animation: indeterminate 1.4s var(--ease-out-quint) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rise,
+  .bar-grow,
+  .panel-in,
+  .fade-in,
+  .cite-flash {
+    animation: none;
+  }
+  .indeterminate::after {
+    animation: none;
+    width: 100%;
+    opacity: 0.35;
+  }
+  * {
+    scroll-behavior: auto !important;
+  }
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  body {
+    background: #fff;
+  }
 }
