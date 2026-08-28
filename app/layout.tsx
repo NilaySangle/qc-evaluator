@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import { IntroScreen } from "@/components/IntroScreen";
 
 /*
   Two families, each with a job. Inter carries every word a reviewer reads.
@@ -34,7 +35,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       // mismatch inside <body> is still reported.
       suppressHydrationWarning
     >
-      <body className="flex min-h-full flex-col">{children}</body>
+      <body className="flex min-h-full flex-col">
+        {children}
+        <IntroScreen />
+      </body>
     </html>
   );
 }
