@@ -1,6 +1,6 @@
 # Loom script — QC Evaluator
 
-Target: **7 minutes**. Webcam on throughout (required by the brief).
+Target: **5:30**. Webcam on throughout (required by the brief).
 
 The brief says they are reading *"how you move when nobody answers."* So this is
 not a feature tour. It is an argument, with the product as evidence.
@@ -19,17 +19,17 @@ not a feature tour. It is an argument, with the product as evidence.
 3. **The rich report** — Renata, kick-off, **72/100, 3 caps fired**
    https://qc-evaluator-gold.vercel.app/runs/00e1e719-b645-44fc-b12d-e1c64f60cdb4
 
-4. **Optional dimensions off** — Hannah Vogel, coaching, **98/100, raw 78/80**
-   https://qc-evaluator-gold.vercel.app/runs/687975a2-20ee-4dd2-a2d0-4f3db48ad2b2
+4. **Coaches** — https://qc-evaluator-gold.vercel.app/coaches
 
-5. **The good-call contrast** (optional) — Owen Brandt, kick-off, **98/100 ELITE**
-   https://qc-evaluator-gold.vercel.app/runs/7e980384-c379-4abc-8f51-809a8a0edabf
+5. Editor with `DECISIONS.md` open
 
-6. **Coaches** — https://qc-evaluator-gold.vercel.app/coaches
+6. Terminal, cwd = repo, ready to run the verbose test command
 
-7. Editor with `DECISIONS.md` open
-
-8. Terminal, cwd = repo, ready to run the verbose test command
+**Spare, if you want a longer cut later:** Hannah Vogel (coaching, 98/100, raw
+78/80 — optional dimensions switched off) and Owen Brandt (kick-off, 98/100
+ELITE) are both good extra proof points but cut from this timing to keep the
+video tight. Their run URLs are in git history of this file if you want them
+back.
 
 **Terminal command to have typed but not run:**
 
@@ -40,7 +40,7 @@ npx vitest run --reporter=verbose
 **Checks:** production is on Sonnet 5. Notifications off. Close mail/Slack.
 Do the one live scoring run on `kickoff-02` (smallest, cheapest).
 
-**Do not** score the same transcript twice on camera. See "Honesty" below.
+**Do not** score the same transcript twice on camera. See "Do not" below.
 
 ---
 
@@ -70,94 +70,71 @@ found, both in twenty-five seconds.*
 
 ---
 
-## ACT 1 — The thesis — 0:20 to 1:00
+## ACT 1 — The thesis — 0:25 to 0:50
 
-> "One line in your brief drove every decision I made: *when a behaviour is not
-> in the transcript, the dimension says so, it does not guess and it does not
-> read the mood.*
->
-> That's a hard requirement, because the easy version of this product is a
-> language model that reads a call and confidently emits twelve numbers. It
-> would look identical to mine on the surface. The difference is what happens
-> when it's wrong.
->
-> So I built it so the model does the reading, and code does everything the
-> model shouldn't be trusted with. Let me show you."
+> "One line in your brief drove every decision here: *when a behaviour is not in
+> the transcript, the dimension says so — it does not guess and it does not read
+> the mood.* The easy version of this product is a model that confidently emits
+> twelve numbers and looks identical on the surface. The difference is what
+> happens when it's wrong. Let me show you."
 
-**Show:** share screen, home page. Let the "What this does differently" rail sit
-on screen while you talk. Don't read it aloud.
+**Show:** share screen, home page, for about 5 seconds — then straight into
+scoring a call. Don't linger, don't read the rail aloud.
 
 ---
 
-## ACT 2 — The product — 1:00 to 3:30
+## ACT 2 — The product — 0:50 to 2:50
 
-### 2a. Async run (1:00–1:40)
+### 2a. Async run (0:50–1:20)
 
 > "I'll score a kick-off call."
 
 Click `kickoff-02` → **Score this call**.
 
-> "Straight to its own URL. The scoring is on the server, not in my browser."
+> "Straight to its own URL — scoring runs on the server, not my browser."
 
 **Close the tab. Reopen the URL from history.**
 
-> "I just closed the tab and came back. The run kept going. That was a stated
-> requirement, and it's why runs are a row in Postgres before any model call
-> happens. If the worker dies, a heartbeat catches it and the page tells you it
-> died. Nothing here spins forever."
+> "Closed the tab, came back — still running. Runs are a row in Postgres before
+> any model call happens, so a dead worker gets caught by a heartbeat and the
+> page tells you it died. Nothing here spins forever."
 
-*This beat is worth doing live. Closing the tab on camera is more convincing than
-describing it.*
+*Worth doing live. Closing the tab on camera beats describing it.*
 
-### 2b. The report (1:40–2:20)
+### 2b. The report (1:20–1:55)
 
 Switch to **Renata kick-off, 72/100**.
 
-> "Here's a finished one. It's ordered the way a reviewer uses it, not the way
-> it was computed.
->
-> The single change worth making, first. And this bit matters — Goal Alignment
-> scored five out of fifteen; at ten, the call scores seventy-seven. That
-> projection is recomputed arithmetic, through the same caps as the real total.
-> I never ask the model what the new score would be, because it would give me a
-> plausible number that doesn't reconcile with the twelve numbers printed next
-> to it."
+> "A finished report, ordered the way it's used. The single change worth making,
+> first — Goal Alignment scored five of fifteen; at ten, the call scores
+> seventy-seven. That's recomputed arithmetic through the same caps as the real
+> total, never the model guessing a new number."
 
 Scroll: brief → gauge → caps.
 
-> "Three caps fired here. And notice this one is styled differently: the
-> condition holds, but the call had already scored below that ceiling, so it
-> removed no points. A cap that fired and a cap that actually cost you are
-> different facts, and flattening them would overstate the penalty."
+> "Three caps fired. This one's styled differently — the condition held, but the
+> call already scored below that ceiling, so it cost nothing. A cap that fired
+> and a cap that actually cost points are different facts."
 
-### 2c. THE MOMENT — evidence (2:20–3:10)
+### 2c. THE MOMENT — evidence (1:55–2:50)
 
 Expand a dimension with citations.
 
-> "Every score cites transcript lines. Watch this."
+> "Every score cites transcript lines. Watch."
 
 **Click a cited line reference.** Panel slides in.
 
-> "That's the real transcript, scrolled to that exact turn, with the lines
-> either side for context. So 'every score is grounded in evidence' isn't
-> something you take on faith in a README. You check it in one click, which is
-> the reviewer's actual job.
+> "The real transcript, scrolled to that exact turn, with context either side.
+> 'Grounded in evidence' isn't a claim in a README — you check it in one click.
+> It also exports as a PDF for the coach, same data, same guarantee.
 >
-> And here's the part that makes it real rather than decorative."
-
-### 2d. PDF (3:10–3:30)
-
-Click **PDF**.
-
-> "Server-rendered, not a browser print dialog, so every coach gets the same
-> document. Evidence is expanded by default here, because paper has no
-> disclosure triangle."
+> And here's why that citation can't be faked."
 
 ---
 
-## ACT 3 — The proof — 3:30 to 5:00
+## ACT 3 — The proof — 2:50 to 4:10
 
-### 3a. The guess-catcher (3:30–4:20)
+### 3a. The guess-catcher (2:50–3:40)
 
 Switch to terminal.
 
@@ -184,101 +161,65 @@ Let it scroll. Then point at the names.
 >
 > You can clone the repo and run that in ten seconds."
 
-### 3b. No arithmetic by the model (4:20–5:00)
+### 3b. No arithmetic by the model (3:40–4:10)
 
 Back to the report. Scroll to the talk-share cap, then the audit box.
 
-> "Second rule: the model never does maths. Totals, bands, caps, normalisation
-> are all TypeScript.
->
-> This cap fired because the coach spoke 73.4% of the words. That's counted from
-> the transcript. If I'd asked a language model to estimate a percentage it
-> would have given me a confident number with nothing underneath it, and that
-> number silently removes twenty points.
->
-> And this box shows the whole derivation — raw score, active maximum,
-> normalised, every cap. A reviewer can redo the total by hand and check me."
+> "Second rule: the model never does maths — totals, bands, caps, normalisation
+> are all TypeScript. This cap fired because the coach spoke 73.4% of the words,
+> counted from the transcript, not estimated by a model. And this box shows the
+> whole derivation, so a reviewer can redo the total by hand and check me."
 
 ---
 
-## ACT 4 — Judgment — 5:00 to 6:15
+## ACT 4 — Judgment — 4:10 to 4:55
 
-### 4a. Proving the opening claim (5:00–5:40)
+### 4a. Proving the opening claim (4:10–4:35)
 
 Switch to **Malik Osei, 100/100**.
 
-> "Remember the opening — a hundred and five, not a hundred. Here's the receipt.
-> This call scored perfectly: raw one hundred and five out of one hundred and
-> five, right there on screen, reported as a hundred out of a hundred.
->
-> I didn't pick a dimension to quietly shave so it would add up, because I can't
-> know which one you'd choose. It normalises over the true maximum and shows
-> both numbers side by side, every time — so the gap I opened with isn't a claim
-> you have to take on faith. It's on every single coaching report."
+> "Remember the opening — a hundred and five, not a hundred. Here's the receipt:
+> this call scored perfectly, raw one hundred and five out of one hundred and
+> five, reported as a hundred out of a hundred. I didn't pick a dimension to
+> quietly shave — it normalises over the true maximum and shows both numbers,
+> on every coaching report. Not a claim you take on faith."
 
-Switch to **Hannah Vogel, 98/100 (raw 78/80)**.
-
-> "Same machinery here. This call had no movement coaching and wasn't a
-> diagnostics milestone, so two dimensions switched off rather than scoring
-> zero. Out of eighty, not a hundred and five. A dimension that had no chance to
-> happen is not a dimension the coach failed."
-
-### 4b. The coaches view (5:40–6:15)
+### 4b. The coaches view (4:35–4:55)
 
 Switch to **/coaches**.
 
 > "One report is QC on one call. Your actual problem is quality across coaches,
-> at volume.
->
-> So this aggregates every scored call: which coach, and which specific rubric
-> dimension the whole team is leaking the most points on. Right now it's Goal
-> Alignment on kick-off calls, minus eight on average across five calls.
->
-> That's a database query over the same rows the report writes, which is why I
-> stored dimensions as rows rather than a JSON blob. Nobody asked for this page.
-> It came from thinking about what a coaching business needs rather than what
-> the ticket said."
+> at volume — so this aggregates every scored call: which coach, which rubric
+> dimension the team is leaking the most points on. It's a database query over
+> the same rows the report writes. Nobody asked for this page — it came from
+> thinking about what a coaching business needs, not what the ticket said."
 
 ---
 
-## ACT 5 — What I'd have asked, and what's missing — 6:15 to 7:00
+## ACT 5 — What I'd have asked, and what's missing — 4:55 to 5:20
 
-> "You asked what I'd have asked if there were someone to ask. Three real ones.
+> "Two real questions I'd have asked, given someone to ask. Coaching sums to a
+> hundred and five — is a dimension mis-weighted, or is a hundred a normalised
+> scale? I assumed normalised. And when a dimension is N/A, the rubric says
+> redistribute the weight but not how — inventing a formula would smuggle my
+> opinion into your score, so I re-based the denominator instead. Both are
+> written up in DECISIONS.md, with the reasoning.
 >
-> One: coaching sums to a hundred and five. Is a dimension mis-weighted, or is a
-> hundred a normalised scale? I assumed normalised.
->
-> Two: when a dimension is N/A, your rubric says redistribute the weight, but
-> not how. Inventing a formula would smuggle my opinion into your score, so I
-> re-based the denominator instead.
->
-> Three: what's the real call volume? That decides whether background jobs need
-> a durable queue. At four transcripts a heartbeat is enough. At a hundred a day
-> I'd add QStash or Inngest, and that's the first thing I'd build next.
->
-> All of it's written up in DECISIONS.md, with the assumption and the reasoning."
+> Two honest limits: the judgment layer is one model's reading — grounded and
+> cited, but not infallible, and there's no ground truth to check it against.
+> What I can prove is the arithmetic and that every quote is real. And I'd want
+> a self-consistency pass, score twice and flag disagreement, before trusting
+> this unsupervised. Not built, for scope."
 
-Show `DECISIONS.md` briefly.
-
-> "Two honest limitations. This is a few hours of work, so the judgment layer is
-> one model's reading of your rubric — it's grounded and it's cited, but it's not
-> infallible, and I have no ground truth to validate it against because none was
-> provided. What I can prove is the arithmetic, and that every quote is real.
->
-> And second, I'd want a self-consistency pass before trusting this unsupervised:
-> score twice, flag the dimensions that disagree. Not built, because scope."
+Show `DECISIONS.md` for a second or two while you say this — don't stop to scroll.
 
 ---
 
-## CLOSE — 7:00 to 7:20
+## CLOSE — 5:20 to 5:35
 
-> "So: it reads the call, it refuses to guess, it does the maths in code, and it
-> shows you the line behind every number.
->
-> Repo and live link are in the email. Thanks for a genuinely good exercise — the
-> ambiguities in that rubric were the most interesting part.
->
-> Happy to go deeper on any of it."
+> "It reads the call, refuses to guess, does the maths in code, and shows you
+> the line behind every number. Repo and live link are in the email. Thanks for
+> a genuinely good exercise — happy to go deeper on any of it."
 
 Webcam full screen for the last line.
 
@@ -289,12 +230,13 @@ Webcam full screen for the last line.
 - **Say it in your own words.** Read this twice, then talk. Reciting sounds
   wooden, and they're reading your judgment, not your diction.
 - **The two beats that win it:** the cold open (0:00) and the verbose test run
-  (3:30). If you're running long, cut Act 2d (PDF) and shorten 4b, never those.
+  (~2:50). Everything else can compress further if you're still running long —
+  those two, don't touch.
 - **Every claim, prove on screen in the same breath.** Don't say "it survives the
   tab closing" — close the tab.
-- **Pace:** slow down on the cold open and on the three questions. Speed up
-  through the product tour; they can see it.
-- **If you fluff a line, keep going.** One retake of a 7-minute video is worse
+- **Pace:** slow down on the cold open and on the two questions in Act 5. Speed
+  up through the product tour; they can see it.
+- **If you fluff a line, keep going.** One retake of a 5-minute video is worse
   than one stumble.
 
 ## Do not
