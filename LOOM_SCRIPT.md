@@ -42,6 +42,17 @@ Do the one live scoring run on `kickoff-02` (smallest, cheapest).
 
 **Do not** score the same transcript twice on camera. See "Do not" below.
 
+**Important — measured, not theoretical:** five live runs of the Renata
+kick-off transcript scored 55.5, 56, 56, 59.5, and 72 out of 100 (FAIL to
+INCONSISTENT). The **72/100 report you switch to in Act 2b/4a is a specific,
+permanently stored run** (`00e1e719...`, see tab 3 above) — visiting that exact
+URL always shows 72, it is never recomputed. But if you click "Score this
+call" on `kickoff-02` fresh during Act 2a, you will very likely NOT get 72 —
+expect something in the 55–60 range. That's fine: Act 2a never states a score,
+it only demonstrates the async flow (close tab, reopen). Just don't say a
+number out loud during that beat, and don't be surprised when it differs from
+the stored report you switch to a minute later.
+
 ---
 
 ## COLD OPEN — 0:00 to 0:25
@@ -205,11 +216,14 @@ Switch to **/coaches**.
 > opinion into your score, so I re-based the denominator instead. Both are
 > written up in DECISIONS.md, with the reasoning.
 >
-> Two honest limits: the judgment layer is one model's reading — grounded and
-> cited, but not infallible, and there's no ground truth to check it against.
-> What I can prove is the arithmetic and that every quote is real. And I'd want
-> a self-consistency pass, score twice and flag disagreement, before trusting
-> this unsupervised. Not built, for scope."
+> One honest limit, and I measured it rather than guessed: I scored this same
+> transcript five times. Talk share came back 73.4% every single time, because
+> that's arithmetic. The judgment layer didn't — raw scores ranged from 55.5 to
+> 72, FAIL to INCONSISTENT, on identical input. That's the real boundary in
+> this system: the numbers are exact, the reading is one model's opinion, and I
+> want to be upfront about that rather than let you discover it by re-running a
+> sample yourselves. A self-consistency pass — score twice, flag disagreement —
+> is the fix, not built, for scope."
 
 Show `DECISIONS.md` for a second or two while you say this — don't stop to scroll.
 

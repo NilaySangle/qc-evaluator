@@ -184,11 +184,22 @@ should not be one guessed UUID away from being public.
 
 ## Known limitations (honest partial beats a missed deadline)
 
-- **The reproducibility caveat.** Sonnet 5 no longer accepts a `temperature`
-  parameter, so the *judgement* layer is not bit-reproducible. The
-  *deterministic* layer (everything numeric) is, and `tests/scoring.test.ts`
-  proves it. I'd close the remaining gap with a small self-consistency pass
-  (score twice, flag dimensions that disagree) — not built, to respect scope.
+- **The reproducibility caveat, measured.** Sonnet 5 no longer accepts a
+  `temperature` parameter, so the *judgement* layer is not bit-reproducible.
+  I scored the same kick-off transcript five separate times during testing:
+  raw scores of 55.5, 56, 56, 59.5, and 72 out of 100 — bands ranging from
+  FAIL to INCONSISTENT on identical input. That is a real gap, not a
+  theoretical one, and it is larger than a rounding difference: one run out of
+  five landed a full band above the other four.
+  What stayed exact across all five: the coach's talk share (73.4% every
+  time), because that is arithmetic, not judgement. The *deterministic* layer
+  (everything numeric) is proven reproducible by `tests/scoring.test.ts`; the
+  judgement layer is not, and this is the clearest evidence of that boundary
+  in the whole system. I'd close the gap with a self-consistency pass — score
+  a call twice, surface the dimensions where the two runs disagree, average or
+  flag for human review — not built, to respect scope. Anyone re-scoring the
+  same sample transcript through this app should expect a similar spread, not
+  an identical number.
 - **No auth.** The app assumes a trusted internal operator. Fine for the stated
   surface; a real deployment needs login.
 - **Deterministic caps only for talk share.** The other cap conditions genuinely
