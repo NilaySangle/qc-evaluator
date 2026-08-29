@@ -44,21 +44,25 @@ Do the one live scoring run on `kickoff-02` (smallest, cheapest).
 
 ---
 
-## COLD OPEN — 0:00 to 0:20
+## COLD OPEN — 0:00 to 0:25
 
-> "Your coaching rubric says twelve dimensions, one hundred points.
+> "Hi, I'm Nilay — this is my submission for the AI developer exercise.
 >
-> I added the twelve dimensions up. It's a hundred and five.
+> I want to start with something specific rather than an introduction: your
+> coaching rubric says twelve dimensions, one hundred points. I added the
+> twelve dimensions up. It's a hundred and five.
 >
-> I want to start there, because that gap is the whole exercise. Everyone
-> building this will get a working app. What I think you're actually asking is
-> what happens when the brief and the reality disagree, and nobody's there to
-> ask. So let me show you the three places that happened, and what I did."
+> That gap is the whole exercise. Everyone building this gets a working app.
+> What I think you're actually asking is what happens when the brief and the
+> reality disagree, and nobody's there to ask. So let me show you the three
+> places that happened, and what I did."
 
 **Show:** webcam full screen. Say it straight to camera. No screen share yet.
 
-*Why this works: it opens with something they may not know about their own
-document. It proves you read, not skimmed. Nobody else opens like this.*
+*Why this works: the name and context land in the first breath, so there's no
+ambiguity about whose submission this is — then it moves straight into
+something they may not know about their own document. Proves you read, not
+skimmed. Nobody else opens like this.*
 
 ---
 
