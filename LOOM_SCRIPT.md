@@ -49,20 +49,24 @@ Do the one live scoring run on `kickoff-02` (smallest, cheapest).
 > "Hi, I'm Nilay — this is my submission for the AI developer exercise.
 >
 > I want to start with something specific rather than an introduction: your
-> coaching rubric says twelve dimensions, one hundred points. I added the
-> twelve dimensions up. It's a hundred and five.
+> coaching rubric says twelve dimensions, one hundred points. I added up the
+> twelve dimensions in your own table. It's a hundred and five — not my tool's
+> output, your source document. And my tool doesn't silently paper over that.
+> It normalises to a hundred and shows you both numbers, so the gap is visible
+> instead of hidden.
 >
-> That gap is the whole exercise. Everyone building this gets a working app.
-> What I think you're actually asking is what happens when the brief and the
-> reality disagree, and nobody's there to ask. So let me show you the three
-> places that happened, and what I did."
+> That's the whole exercise in one example. Everyone building this gets a
+> working app. What I think you're actually asking is what happens when the
+> brief and the reality disagree, and nobody's there to ask. So let me show you
+> where else that happened, and what I did."
 
 **Show:** webcam full screen. Say it straight to camera. No screen share yet.
 
-*Why this works: the name and context land in the first breath, so there's no
-ambiguity about whose submission this is — then it moves straight into
-something they may not know about their own document. Proves you read, not
-skimmed. Nobody else opens like this.*
+*Why this works: the name and context land in the first breath. The hook now
+resolves itself in the same breath too — "not my tool's output, your source
+document" — so nobody watching wonders for five minutes whether your app is
+broken. It proves you read the rubric closely AND that you fixed what you
+found, both in twenty-five seconds.*
 
 ---
 
@@ -199,17 +203,18 @@ Back to the report. Scroll to the talk-share cap, then the audit box.
 
 ## ACT 4 — Judgment — 5:00 to 6:15
 
-### 4a. Back to the 105 (5:00–5:40)
+### 4a. Proving the opening claim (5:00–5:40)
 
 Switch to **Malik Osei, 100/100**.
 
-> "Back to where I started. Here's a coaching call that scored perfectly. Look
-> at the raw number: a hundred and five out of a hundred and five, reported as a
-> hundred out of a hundred.
+> "Remember the opening — a hundred and five, not a hundred. Here's the receipt.
+> This call scored perfectly: raw one hundred and five out of one hundred and
+> five, right there on screen, reported as a hundred out of a hundred.
 >
-> I didn't silently shave a dimension to force it to add up, because I can't
-> know which one you'd pick. I normalise over the active dimensions and show you
-> both numbers, so the discrepancy is visible instead of hidden."
+> I didn't pick a dimension to quietly shave so it would add up, because I can't
+> know which one you'd choose. It normalises over the true maximum and shows
+> both numbers side by side, every time — so the gap I opened with isn't a claim
+> you have to take on faith. It's on every single coaching report."
 
 Switch to **Hannah Vogel, 98/100 (raw 78/80)**.
 
