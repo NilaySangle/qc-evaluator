@@ -1,264 +1,233 @@
 # Loom script — QC Evaluator
 
-Target: **5:30**. Webcam on throughout (required by the brief).
+Target: **around 5 minutes**. Webcam on the whole time.
 
-The brief says they are reading *"how you move when nobody answers."* So this is
-not a feature tour. It is an argument, with the product as evidence.
+This version is written to be *said*, not read. Short sentences. Plain words.
+If a line feels awkward in your mouth, change it — the meaning matters, not
+the exact wording.
 
 ---
 
 ## Before you hit record
 
-**Tabs, in this order** (so you never wait on camera):
+**Have these tabs open, in this order, so you never wait on camera:**
 
 1. **Home** — https://qc-evaluator-gold.vercel.app
 
-2. **The 105 proof** — Malik Osei, coaching, **100/100 but raw 105/105**
+2. **The 105 proof** — a call that scored 100/100 but really added up to 105
    https://qc-evaluator-gold.vercel.app/runs/011c01f1-f43d-478b-acef-c6025d0904ee
 
-3. **The rich report** — Renata, kick-off, **72/100, 3 caps fired**
+3. **The main report you'll walk through** — Renata's call, 72/100
    https://qc-evaluator-gold.vercel.app/runs/00e1e719-b645-44fc-b12d-e1c64f60cdb4
 
-4. **Coaches** — https://qc-evaluator-gold.vercel.app/coaches
+4. **Coaches page** — https://qc-evaluator-gold.vercel.app/coaches
 
-5. Editor with `DECISIONS.md` open
+5. **DECISIONS.md** — open on GitHub or in your editor
 
-6. Terminal, cwd = repo, ready to run the verbose test command
+6. **Terminal** — sitting in the project folder, ready to type the test command
 
-**Spare, if you want a longer cut later:** Hannah Vogel (coaching, 98/100, raw
-78/80 — optional dimensions switched off) and Owen Brandt (kick-off, 98/100
-ELITE) are both good extra proof points but cut from this timing to keep the
-video tight. Their run URLs are in git history of this file if you want them
-back.
-
-**Terminal command to have typed but not run:**
+**Terminal command to have typed but not run yet:**
 
 ```
 npx vitest run --reporter=verbose
 ```
 
-**Checks:** production is on Sonnet 5. Notifications off. Close mail/Slack.
-Do the one live scoring run on `kickoff-02` (smallest, cheapest).
+**Before you record:** make sure the site is set to the good AI model (Sonnet,
+not the cheap one). Close Slack/Mail. Turn off notifications.
 
-**Do not** score the same transcript twice on camera. See "Do not" below.
-
-**Important — measured, not theoretical:** five live runs of the Renata
-kick-off transcript scored 55.5, 56, 56, 59.5, and 72 out of 100 (FAIL to
-INCONSISTENT). The **72/100 report you switch to in Act 2b/4a is a specific,
-permanently stored run** (`00e1e719...`, see tab 3 above) — visiting that exact
-URL always shows 72, it is never recomputed. But if you click "Score this
-call" on `kickoff-02` fresh during Act 2a, you will very likely NOT get 72 —
-expect something in the 55–60 range. That's fine: Act 2a never states a score,
-it only demonstrates the async flow (close tab, reopen). Just don't say a
-number out loud during that beat, and don't be surprised when it differs from
-the stored report you switch to a minute later.
+**Important thing to know:** if you score the exact same call twice, you can
+get a different number both times. That's normal — explained in Part 5. For
+now, just don't score the same call twice on camera and expect it to match.
+Everything else in this script uses links to reports that are already saved,
+so those numbers never change.
 
 ---
 
-## COLD OPEN — 0:00 to 0:25
+## COLD OPEN — 0:00 to 0:20
 
-> "Hi, I'm Nilay — this is my submission for the AI developer exercise.
+> "Hi, I'm Nilay — this is my submission for the AI developer role.
 >
-> I want to start with something specific rather than an introduction: your
-> coaching rubric says twelve dimensions, one hundred points. I added up the
-> twelve dimensions in your own table. It's a hundred and five — not my tool's
-> output, your source document. And my tool doesn't silently paper over that.
-> It normalises to a hundred and shows you both numbers, so the gap is visible
-> instead of hidden.
+> Let me start with something specific instead of a normal intro. Your
+> coaching rubric says it's scored out of 100 points. I added up all twelve
+> categories myself. They actually add up to 105.
 >
-> That's the whole exercise in one example. Everyone building this gets a
-> working app. What I think you're actually asking is what happens when the
-> brief and the reality disagree, and nobody's there to ask. So let me show you
-> where else that happened, and what I did."
+> That's not my app being wrong. That's a mistake sitting in your own
+> document. How I handled that mistake is basically what this whole video is
+> about. Let me show you."
 
-**Show:** webcam full screen. Say it straight to camera. No screen share yet.
-
-*Why this works: the name and context land in the first breath. The hook now
-resolves itself in the same breath too — "not my tool's output, your source
-document" — so nobody watching wonders for five minutes whether your app is
-broken. It proves you read the rubric closely AND that you fixed what you
-found, both in twenty-five seconds.*
+**Show:** just your face. No screen yet.
 
 ---
 
-## ACT 1 — The thesis — 0:25 to 0:50
+## PART 1 — The one rule — 0:20 to 0:45
 
-> "One line in your brief drove every decision here: *when a behaviour is not in
-> the transcript, the dimension says so — it does not guess and it does not read
-> the mood.* The easy version of this product is a model that confidently emits
-> twelve numbers and looks identical on the surface. The difference is what
-> happens when it's wrong. Let me show you."
+> "Here's the one rule I built everything around: if the AI can't find proof
+> for something in the call, it has to say so. It doesn't guess, and it
+> doesn't make things up.
+>
+> Most tools like this will just spit out twelve confident numbers and hope
+> they're right. Mine is built to be honest instead. Let me show you how."
 
-**Show:** share screen, home page, for about 5 seconds — then straight into
-scoring a call. Don't linger, don't read the rail aloud.
+**Show:** screen share, home page, for a few seconds. Then move on.
 
 ---
 
-## ACT 2 — The product — 0:50 to 2:50
+## PART 2 — Walking through the app — 0:45 to 2:40
 
-### 2a. Async run (0:50–1:20)
+### 2a. Scoring a call live (0:45–1:15)
 
-> "I'll score a kick-off call."
+> "I'll score a real call, right now."
 
-Click `kickoff-02` → **Score this call**.
+Click a sample transcript → **Score this call**.
 
-> "Straight to its own URL — scoring runs on the server, not my browser."
+> "See that? It gave me a link straight away. The scoring happens on the
+> server in the background — not in my browser."
 
-**Close the tab. Reopen the URL from history.**
+**Close the tab. Reopen the link from your history.**
 
-> "Closed the tab, came back — still running. Runs are a row in Postgres before
-> any model call happens, so a dead worker gets caught by a heartbeat and the
-> page tells you it died. Nothing here spins forever."
+> "Watch — I just closed the tab completely and came back. It's still
+> working. Nothing got lost. And if something ever does break, it tells you
+> why instead of just spinning forever."
 
-*Worth doing live. Closing the tab on camera beats describing it.*
+### 2b. Reading a finished report (1:15–1:50)
 
-### 2b. The report (1:20–1:55)
+Switch to **Renata's report, 72/100**.
 
-Switch to **Renata kick-off, 72/100**.
+> "Here's a finished one. Right at the top: the one thing to fix first. This
+> coach scored 5 out of 15 on 'digging into the client's real goal.' Fix
+> that one thing, and the score jumps from 72 to 77. That number isn't the
+> AI guessing — it's actually recalculated with real math."
 
-> "A finished report, ordered the way it's used. The single change worth making,
-> first — Goal Alignment scored five of fifteen; at ten, the call scores
-> seventy-seven. That's recomputed arithmetic through the same caps as the real
-> total, never the model guessing a new number."
+Scroll to the caps section.
 
-Scroll: brief → gauge → caps.
+> "Down here are automatic penalties — hard rules straight from your rubric,
+> like 'if the coach talks more than 70% of the call, cap the score.' The app
+> enforces these every single time, so it's consistent."
 
-> "Three caps fired. This one's styled differently — the condition held, but the
-> call already scored below that ceiling, so it cost nothing. A cap that fired
-> and a cap that actually cost points are different facts."
+### 2c. The best part — proof, not promises (1:50–2:40)
 
-### 2c. THE MOMENT — evidence (1:55–2:50)
+Expand a dimension.
 
-Expand a dimension with citations.
+> "Every score comes with a receipt. Watch."
 
-> "Every score cites transcript lines. Watch."
+Click a line reference. The transcript panel opens.
 
-**Click a cited line reference.** Panel slides in.
-
-> "The real transcript, scrolled to that exact turn, with context either side.
-> 'Grounded in evidence' isn't a claim in a README — you check it in one click.
-> It also exports as a PDF for the coach, same data, same guarantee.
+> "I just clicked that little tag, and it jumped straight to the real
+> moment in the call it's talking about. You never have to just trust the
+> AI — you can check it yourself, in one click. It also exports as a clean
+> PDF.
 >
-> And here's why that citation can't be faked."
+> And here's why that receipt can't be faked."
 
 ---
 
-## ACT 3 — The proof — 2:50 to 4:10
+## PART 3 — Proving it doesn't lie — 2:40 to 3:50
 
-### 3a. The guess-catcher (2:50–3:40)
+### 3a. The test that proves it (2:40–3:20)
 
-Switch to terminal.
+Switch to the terminal.
 
-> "Your brief warned that one of the four transcripts exists to catch a system
-> that guesses. My defence doesn't try to work out which one it is. It doesn't
-> need to.
+> "You said one of the four sample calls is designed to trick a lazy AI into
+> making stuff up. Here's how I made sure mine never does.
 >
-> After the model scores, plain code checks every quote against the real
-> transcript. A model inventing support for a score has to invent words, and
-> invented words aren't in the file. That's a string comparison: instant, free,
-> and provably right. Fabricated quotes are deleted before you ever see them,
-> and the dimension is marked unsupported rather than shown with false
-> confidence."
+> After the AI scores a call, my code checks every quote it used against the
+> real transcript, word for word. If a quote isn't actually there, it gets
+> deleted automatically before you ever see it. Let me prove that."
 
 **Run:** `npx vitest run --reporter=verbose`
 
-Let it scroll. Then point at the names.
+Let it run. Point at a few lines as they scroll.
 
-> "Thirty-four tests, no API key needed. And read the names, because they're the
-> argument: *fabricated evidence is rejected. Genuine evidence survives. Absence
-> is reported, not punished. Talk share is counted, not estimated. Role
-> resolution refuses invented names.* And at the bottom: *produces
-> byte-identical totals across repeated runs.*
+> "These are automated checks — 34 of them, running for free, in under a
+> second. Look what they say: fake evidence gets rejected. Real evidence
+> survives. The AI doesn't get punished for something that genuinely never
+> happened in the call. I'm not just telling you it works — I built a test
+> that proves it, every time, and anyone can run it themselves."
+
+### 3b. The AI never does math (3:20–3:50)
+
+Back to the report. Scroll to the talk-time cap, then the box at the bottom.
+
+> "One more rule: the AI never does the math. Every score, every percentage,
+> every total is calculated by regular code, not the model.
 >
-> You can clone the repo and run that in ten seconds."
-
-### 3b. No arithmetic by the model (3:40–4:10)
-
-Back to the report. Scroll to the talk-share cap, then the audit box.
-
-> "Second rule: the model never does maths — totals, bands, caps, normalisation
-> are all TypeScript. This cap fired because the coach spoke 73.4% of the words,
-> counted from the transcript, not estimated by a model. And this box shows the
-> whole derivation, so a reviewer can redo the total by hand and check me."
+> This number — 73.4% — is how much the coach talked, counted directly from
+> the transcript. Not estimated, counted. And this box at the bottom shows
+> exactly how the final score was built, so anyone can check it by hand."
 
 ---
 
-## ACT 4 — Judgment — 4:10 to 4:55
+## PART 4 — Judging fairly, and thinking bigger — 3:50 to 4:35
 
-### 4a. Proving the opening claim (4:10–4:35)
+### 4a. Proof of the opening claim (3:50–4:10)
 
-Switch to **Malik Osei, 100/100**.
+Switch to the **105-proof report**.
 
-> "Remember the opening — a hundred and five, not a hundred. Here's the receipt:
-> this call scored perfectly, raw one hundred and five out of one hundred and
-> five, reported as a hundred out of a hundred. I didn't pick a dimension to
-> quietly shave — it normalises over the true maximum and shows both numbers,
-> on every coaching report. Not a claim you take on faith."
+> "Remember how I opened — 105, not 100? Here's the receipt. This call
+> scored perfectly, and it actually says 105 out of 105 right there, then
+> shows it as 100 out of 100. I didn't quietly drop a category to make the
+> math work. I just show both numbers, honestly, every single time."
 
-### 4b. The coaches view (4:35–4:55)
+### 4b. Thinking about the whole team (4:10–4:35)
 
 Switch to **/coaches**.
 
-> "One report is QC on one call. Your actual problem is quality across coaches,
-> at volume — so this aggregates every scored call: which coach, which rubric
-> dimension the team is leaking the most points on. It's a database query over
-> the same rows the report writes. Nobody asked for this page — it came from
-> thinking about what a coaching business needs, not what the ticket said."
+> "One report tells you about one call. But you're running a whole team. So
+> I built this page too. It looks across every coach and every call, and
+> shows you which specific skill your team is weakest at, overall. Nobody
+> asked me to build this — I built it because it's the real problem behind
+> the exercise."
 
 ---
 
-## ACT 5 — What I'd have asked, and what's missing — 4:55 to 5:20
+## PART 5 — Being honest about the rest — 4:35 to 5:00
 
-> "Two real questions I'd have asked, given someone to ask. Coaching sums to a
-> hundred and five — is a dimension mis-weighted, or is a hundred a normalised
-> scale? I assumed normalised. And when a dimension is N/A, the rubric says
-> redistribute the weight but not how — inventing a formula would smuggle my
-> opinion into your score, so I re-based the denominator instead. Both are
-> written up in DECISIONS.md, with the reasoning.
+Switch to **DECISIONS.md**. Leave it still on screen — don't scroll.
+
+> "Two quick things I want to be upfront about.
 >
-> One honest limit, and I measured it rather than guessed: I scored this same
-> transcript five times. Talk share came back 73.4% every single time, because
-> that's arithmetic. The judgment layer didn't — raw scores ranged from 55.5 to
-> 72, FAIL to INCONSISTENT, on identical input. That's the real boundary in
-> this system: the numbers are exact, the reading is one model's opinion, and I
-> want to be upfront about that rather than let you discover it by re-running a
-> sample yourselves. A self-consistency pass — score twice, flag disagreement —
-> is the fix, not built, for scope."
-
-Show `DECISIONS.md` for a second or two while you say this — don't stop to scroll.
+> First — your rubric has a few unclear spots, like that 105-points thing.
+> I didn't just guess and move on. I wrote down every assumption I made and
+> why, so you can push back on any of it.
+>
+> Second, and this matters — I tested this by scoring the exact same call
+> five separate times. The math parts, like that 73% number, came back
+> identical every time. But the AI's actual judgment moved around — same
+> call, but sometimes it scored 72, sometimes 56. That's a real limit of
+> using AI to judge things, and I'd rather tell you myself than have you
+> find it later."
 
 ---
 
-## CLOSE — 5:20 to 5:35
+## CLOSE — 5:00 to 5:15
 
-> "It reads the call, refuses to guess, does the maths in code, and shows you
-> the line behind every number. Repo and live link are in the email. Thanks for
-> a genuinely good exercise — happy to go deeper on any of it."
+Cut back to your face.
 
-Webcam full screen for the last line.
+> "So — it reads the call, it doesn't make things up, the math is always
+> right, and you can check every score yourself. The code and the live link
+> are both in the email. Thanks for a genuinely fun problem to work on."
 
 ---
 
 ## Delivery notes
 
-- **Say it in your own words.** Read this twice, then talk. Reciting sounds
-  wooden, and they're reading your judgment, not your diction.
-- **The two beats that win it:** the cold open (0:00) and the verbose test run
-  (~2:50). Everything else can compress further if you're still running long —
-  those two, don't touch.
-- **Every claim, prove on screen in the same breath.** Don't say "it survives the
-  tab closing" — close the tab.
-- **Pace:** slow down on the cold open and on the two questions in Act 5. Speed
-  up through the product tour; they can see it.
-- **If you fluff a line, keep going.** One retake of a 5-minute video is worse
-  than one stumble.
+- **Say it in your own words.** Read this twice, then just talk — don't
+  recite it. They're listening to how you think, not how well you memorized
+  a script.
+- **The two moments that matter most:** the opening (105 vs 100) and running
+  the tests live. If you're short on time, everything else can shrink —
+  those two, keep full length.
+- **Whatever you claim, show it on screen in the same breath.** Don't say
+  "it survives closing the tab" — actually close the tab.
+- **If you mess up a line, keep talking.** Re-recording a 5-minute video
+  because of one stumble is worse than just continuing.
 
-## Do not
+## Do not say
 
-- Do not re-score the same transcript twice on camera. The judgment layer is
-  probabilistic; two runs of the same call can land a few points apart, and
-  that's a conversation for Act 5, not a live surprise.
-- Do not claim the scoring is "accurate" or "correct." Claim it is **evidenced,
-  deterministic in its arithmetic, and honest about absence**. That's defensible
-  under questioning; "accurate" is not.
-- Do not read the rail on the home page aloud. Let it sit on screen.
+- Don't call the scoring "accurate" or "100% correct." Say it's **honest,
+  checkable, and the math is always right** — that's true and it holds up if
+  someone pushes back on it.
+- Don't score the same transcript twice on camera and expect the same
+  number — see Part 5 for why.
+- Don't read every word on the home page out loud. Let it sit there while
+  you talk about something else.
